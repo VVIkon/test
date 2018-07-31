@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue test</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!-- <link href="css/ionicons.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+    
+    <!-- ======= Comonents ===================================================== -->
+
+    <div id="app8">
+        <dlg btn-cancel='Нееет' btn-confirm='Приходится' >Вы уверены?</dlg>
+        <dlg btn-cancel='Нет' btn-confirm='Да'>Точно уверены?</dlg>
+    
+    </div>
+
+    
+    <template id="dialog-template">
+        <div id="Dialog-container">
+            <div class="Dialog" v-show='active'>
+                <div class="Dialog_overlay" @click='close()'></div>
+                <div class="Dialog_content">
+                    <div class="Dialog_body">
+                        <!-- Вы уверены? -->
+                        <slot></slot>
+                    </div>
+                    <div class="Dialog_footer">
+                        <button class="btn" @click='onCancel()'>{{ btnCancel }}</button>
+                        <button class="btn btn-ok" @click='onConfirm()'>{{ btnConfirm }}</button>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="link" @click='open()'>Ссылка</a>
+        </div>
+    </template>
+
+
+
+<!-- ================================== -->
+
+    <div id="app9">
+        <header>
+            <nav>
+                <a href="#" @click="switchView('square')">Квадрат</a>
+                <a href="#" @click="switchView('triangle')">Треугольник</a>
+                <a href="#" @click="switchView('circlew')">Круг</a>
+                <a href="#" @click="switchView('lemon')">Лемон</a>
+            </nav>
+        </header>
+            
+        <transition name="switch">
+            <component :is="currentView"></conponent>       
+        </transition>
+    </div>
+
+    <template id="square-template">
+        <div class="figure square"></div>
+    </template>
+    <template id="triangle-template">
+        <div class="figure triangle"></div>
+    </template>
+    <template id="circle-template">
+        <div class="figure circlew"></div>
+    </template>
+    <template id="lemon-template">
+        <div class="figure lemon"></div>
+    </template>
+
+
+
+
+
+
+
+
+
+<!-- ============================================================= -->
+
+    <!-- <script src="lib/ionicons.js"></script> -->
+    <script src="lib/vue.js"></script>
+    <script src="js/blog.js"></script>
+    
+</body>
+</html>

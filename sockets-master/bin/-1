@@ -1,0 +1,6 @@
+Log opened at 2018-05-11 12:51:34
+I: Connecting to configured address/port: 127.0.0.1:9001.
+W: Creating socket for '127.0.0.1:9001', poll success, but error: Operation now in progress (29).
+E: Could not connect to client. :-(
+Log closed at 2018-05-11 12:51:34
+

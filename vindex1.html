@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue test</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!-- <link href="css/ionicons.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="bear in bears" :class="{'strk':bear.status, 'err': bear.error}">{{bear.name}}</li>
+        </ul>
+
+    </div>
+    
+    <div id="app2">
+        <form action="">
+            <button v-on:click.prevent="onClick">Нажать со preventDefault!</button>    <!-- модификатоп .prevent = e.preventDefault() -->
+            <!-- <button v-on:click.stop="onClick">Нажать co stopPropagation!</button> -->       <!-- модификатоп .stop = e.stopPropagation() -->
+        </form>
+    </div>
+
+    <div id="app3">
+        <input type="text" v-model='message' v-on:keyup.enter='onClick'>  <!-- псевдоним .enter можно заменить на код .13 -->
+    </div>                               <!-- вместо v-on можно использовать шорткат @ ==> @:keyup.13='onclick' --> 
+
+    
+    <div id="app4">
+        <button @click = "onClick">Show box</button>
+        <!-- <button @click = "show = !show">Show box</button> -->
+        <div id = 'a1' class="box" v-show="show"></div>
+        <div id = 'a2' class="box" v-if="show"></div>
+        <div id = 'a3'  v-else> Теперь пусто</div>
+    </div>
+
+
+    <div id="app5">
+        <header>
+            <button @click = "onClick"> <i class="icon ion-md-menu"></i> </ion-icon></button>
+            <transition name="slide-aside">
+                <aside v-show='show'></aside>
+            </transition>
+        </header>
+    </div>
+
+
+    <div id="app6">
+        <input type="text" v-model='filterText' autofocus>
+        <ul>
+            <li v-for="item in filteredList"> {{item.name}}, {{item.age}}</li>
+        </ul>
+    </div>
+
+    <div id="app7">
+        <span>{{count}}/30</span>
+        <textarea v-model='text'></textarea>
+        <button v-if='count<=30'>Отправить</button>
+    </div>
+
+    
+
+<!-- ============================================================= -->
+
+    <!-- <script src="lib/ionicons.js"></script> -->
+    <script src="lib/vue.js"></script>
+    <!-- <script src="js/blog.js"></script> -->
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                bears:[
+                    { name:'Гризли', status: false, error: true},
+                    { name:'Белый' , status: true , error: true},
+                    { name:'Панда' , status: true,  error: false},
+                    { name:'Губач' , status: false, error: false}
+                ]
+
+            }    
+        });
+
+        new Vue({
+            el:'#app2',
+            methods: {
+                onClick: function(e){
+                    //e.preventDefault() // Чтобы заблокировать отправку формы по GET 
+                   // e.stopPropagation() // Чтоб блокировать всплытие
+                    console.log('Кнопка нажата!');
+                }
+            }
+        });
+
+         new Vue({
+            el: '#app3',
+            data: {
+                message: ''
+            },
+            methods: {
+                onClick: function(e){
+                    console.log(this.message);
+                }
+            }
+
+        });
+
+        new Vue({
+            el: '#app4',
+            data: {
+                show: false
+            },
+            methods:{
+                onClick: function(){
+                    if (this.show) {
+                        this.show = false;
+                    }else{
+                        this.show = true;
+                    }
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app5',
+            data: {
+                show: false
+            },
+            methods:{
+                onClick: function(){
+                    if (this.show) {
+                        this.show = false;
+                    }else{
+                        this.show = true;
+                    }
+                }
+            }
+        });
+
+
+
+        let fText;
+        var operFilter = function(elem){
+            let fName = elem.name.concat(elem.age.toString().padStart(3, "0")).toLowerCase();
+            if(fText==='') 
+                return true;
+            else {
+                return fName.indexOf(fText) > -1;
+            }
+        };
+        var operSort = function(a,b){
+            let fa = a.name.concat(a.age.toString().padStart(3, "0")); //Слияние имени и возраств
+            let fb = b.name.concat(b.age.toString().padStart(3, "0")); // добавление к возрасту лидируюших нулей
+            if ( fa > fb ) {
+                return 1;
+            }
+            if ( fa < fb ) {
+                return -1;
+            }
+            return 0;
+        };
+
+        var app6 = new Vue({
+            el: '#app6',
+            data: {
+                items: [
+                    {name: 'Петя', age: 27},
+                    {name: 'Лена', age: 17},                    
+                    {name: 'Лена', age: 3},
+                    {name: 'Саша', age: 23},
+                    {name: 'Федор',age: 47},
+                    {name: 'Семён',age: 35},
+                ],
+                filterText:''
+            },
+            computed:{
+                filteredList: function(){
+                    fText = this.filterText.toLowerCase();
+                    return this.items.filter(operFilter).sort(operSort);
+                }
+            }
+        });
+
+        new Vue({
+            el: app7,
+            data:{
+                text: '',
+            },
+            computed:{
+                count:function(){
+                    return this.text.length;
+                }
+            },
+
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+div {
+    box-sizing: border-box;
+}
+
+.field {
+    margin: 10px;
+    border: solid blue 5px;
+    width: 610px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.cell.x:after {
+    content: '✕';
+    color: green;
+    font-size: 140px;
+    position: absolute;
+    width: 194px;
+    height: 194px;
+    line-height: 194px;
+    text-align: center;
+}
+
+.cell.o:after {
+    font-weight: bold;
+    color: red;
+    content: '◯';
+    font-size: 140px;
+    position: absolute;
+    width: 194px;
+    height: 194px;
+    line-height: 200px;
+    text-align: center;
+}
+
+
+
+.row {
+    height: 200px;
+}
+
+.cell {
+    display: inline-block;
+    border: solid gray 2px;
+    width: 200px;
+    height: 200px;
+}
+
+.winner-message {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+div.quote {
+    margin: 30px 0;
+    position: relative;
+    word-wrap: break-word;
+}
+
+div.quote div.text {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #f3f3f3;
+    border: 1px dotted #bbbbbb;
+    font-family: 'Monaco', 'Liberation Mono', 'Droid Sans Mono', 'Ubuntu Mono', 'Lucida Console', 'Helvetica Neue', monospace;
+    padding: 7px 8px 5px 8px;
+    font-size: 10pt;
+    line-height: 1.3em;
+}
+
+.mainGame{
+    display: none;
+}
+
+.error-message {
+    color: red;
+}
+
+.generateField{
+    margin: 10px;
+    display: inline-block;
+}

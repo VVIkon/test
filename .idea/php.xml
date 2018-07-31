@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/sockets-master/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/composer" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/guzzle/common" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/guzzle/parser" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/guzzle/stream" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/guzzle/http" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/ircmaxell/password-compat" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/symfony/polyfill-php54" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/symfony/polyfill-php55" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/sockets-master/vendor/cboden/ratchet" />
+    </include_path>
+  </component>
+</project>

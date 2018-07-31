@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/sockets-master/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/cboden/ratchet" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/evenement/evenement" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/guzzle/common" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/guzzle/http" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/guzzle/parser" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/guzzle/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/ircmaxell/password-compat" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/react/event-loop" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/react/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/symfony/polyfill-php54" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/symfony/polyfill-php55" />
+      <excludeFolder url="file://$MODULE_DIR$/sockets-master/vendor/symfony/routing" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
